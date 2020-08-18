@@ -14,7 +14,7 @@ beta = 40.
 t = -1.                   #nearest neighbor hopping
 tp = 0.                   #next nearest neighbor hopping
 U = 3                     # hubbard U parameter
-nloops = 10               # number of DFMT loops
+nloops = 15               # number of DMFT loops
 nk = 30                   # number of k points in each dimension
 density_required = 1.     # target density for setting the chemical potential
 

@@ -47,7 +47,7 @@ hop= {  (1,0)  :  [[ t]],
         (-1,1) :  [[ tp]]}
 
 L = TBLattice(units = [(1, 0, 0) , (0, 1, 0)], hopping = hop, orbital_names= range(1), orbital_positions= [(0., 0., 0.)]*1)
-SL = TBSuperLattice(tb_lattice =L, super_lattice_units = [ (1,1,0), (1,-1,0), (0,0,1) ])
+SL = TBSuperLattice(tb_lattice =L, super_lattice_units = [ (1,1,0), (1,-1,0)])
 SK = SumkDiscreteFromLattice(lattice=SL, n_points=nk)
 
 mesh = S.G_iw.mesh

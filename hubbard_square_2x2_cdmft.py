@@ -12,6 +12,8 @@ import numpy as np
 
 beta = 40.
 U = 3.
+t = -1.
+tp = 0.
 nk = 40
 nloops = 15
 prec_mu = 1e-5

@@ -67,7 +67,7 @@ for r in SL.hopping_dict():
     ryind = r[1] + my
     Hrij[rxind,ryind] = SL.hopping_dict()[r]
     
-Hk_nambu_array = np.zeros((nk, 8, 8), dtype = np.complex_)
+Hk_nambu = np.zeros((nk, 8, 8), dtype = np.complex_)
 ikarray = np.array(range(nk))
 for ik in (ikarray):
     k = kpoints[ik]
@@ -79,12 +79,12 @@ for ik in (ikarray):
             Hexp[xi, yi, :, :] = eikr
     Hkrij = Hrij * Hexp
     Hk = np.sum(Hkrij, axis = (0,1))
-    Hk_nambu_array[ik, :4, :4] = Hk
-    Hk_nambu_array[ik, 4:, 4:] = -Hk.T
+    Hk_nambu[ik, :4, :4] = Hk
+    Hk_nambu[ik, 4:, 4:] = -Hk.T
 
 gloc = GfImFreq(beta = beta, indices=range(8))
 Gloc = BlockGf(name_list=['nambu'], block_list=[gloc])
-Sigma_orig = Sigma_lat.copy() #self energy in the original site basis
+Sigma_orig = Gloc.copy() #self energy in the original site basis
 
 S = Solver(beta = beta, gf_struct = [('s+', [0]), ('s-', [0]), ('d+', [0]), ('d-', [0]), ('px', [0,1]), ('py', [0,1])])
 

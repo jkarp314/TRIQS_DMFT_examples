@@ -61,13 +61,13 @@ for kx in k1:
         kpoints.append([kx,ky])
 kpoints = np.asarray(kpoints)
 
-Hrij = np.zeros((nx,ny,dim,dim), dtype = np.complex_)
+Hrij = np.zeros((nx,ny,4,4), dtype = np.complex_)
 for r in SL.hopping_dict():
     rxind = r[0] + mx
     ryind = r[1] + my
     Hrij[rxind,ryind] = SL.hopping_dict()[r]
     
-Hk_nambu_array = np.zeros((nk, 2*dim, 2*dim), dtype = np.complex_)
+Hk_nambu_array = np.zeros((nk, 8, 8), dtype = np.complex_)
 ikarray = np.array(range(nk))
 for ik in (ikarray):
     k = kpoints[ik]
